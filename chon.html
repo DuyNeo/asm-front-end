@@ -1,0 +1,55 @@
+
+<body>
+  <h1>{{Name}}</h1>
+  
+  <div  class="col-12">
+    <h4>Câu hỏi 1 trong số 25</h4>
+    <p>{{cauhoi.Text}}</p>
+    <div >
+        <div class="form-check form-check-inline d-block neo  " width="100%">
+            <div class="form-check form-check-inline d-block neo1  ">
+              <input class="form-check-input " type="radio"  name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label " for="inlineRadio1">1</label>
+            </div>
+              <div class="form-check form-check-inline d-block neo1 ">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+              </div>
+            
+            <div class="form-check form-check-inline d-block neo1 "> 
+              <input class="form-check-input" type="radio" style="border-radius: 50%;" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+                <label class="form-check-label" for="inlineRadio1">3</label>
+            </div>
+            
+            <div class="form-check form-check-inline d-block neo1 ">
+              <input class="form-check-input fs-18"  type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+              <label class="form-check-label" for="inlineRadio2">4</label>
+            </div>
+        </div>
+        <!-- <div class="input-group my-2" >
+          <div class="input-group-text">
+              <input class="form-check-input mt-0" type="radio" name="qs">
+            </div>
+            <label   class="form-control fs-5">cau tra loi  1 nenenenenene</label>
+      </div> -->
+        <button class="btn btn-primary text-white mt-3">
+          <i class="bi bi-arrow-left"></i>
+          Lùi</button>
+        <button class="btn btn-success text-white mt-3 mx-4">Tiếp
+          <i class="bi bi-arrow-right"></i>
+        </button>
+        
+    </div>
+  </div>
+
+  <!-- phancauhoi -->
+  <div class="row">
+  <div class="  col-sm-12  col-8">
+   <div class="row mt-4" >
+    <!-- || {{n.Id}} -->
+      <div ng-repeat="n in subject" class="col-1 mt-2"><button ng-click="nextQs(n.Id)" class="bg-success shadow rounded mx-2 text-dark" >{{$index < 9 ? "0" + ($index + 1)  : ($index + 1)}} </button></div>
+   
+  </div>
+  </div>
+</div>
+</body>

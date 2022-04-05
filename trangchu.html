@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="trangchu.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="main.js"></script>
+    <script src="./db/Subjects.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  
+  <body ng-app="monhoc">
+    <div class="vertical-nav bg-white" id="sidebar">
+      <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center"><img src="https://bootstrapious.com/i/snippets/sn-v-nav/avatar.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+          <div class="media-body">
+            <h4 class="m-0">Duy Edu</h4>
+            <p class="font-weight-light text-muted mb-0">Web developer</p>
+          </div>
+        </div>
+      </div>
+    
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+    
+      <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic bg-light">
+            <i class="bi bi-house-door-fill text-primary"></i>
+                    Trang chủ
+                </a>
+        </li>
+        <li class="nav-item">
+          <a href="#!gioithieu"  class="nav-link text-dark font-italic">
+            <i class="bi bi-file-earmark-person-fill text-primary" ></i>
+                    Giới thiệu
+                </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic ">
+            <i class="bi bi-hdd-fill text-primary"></i>
+                    Dịch vụ
+
+                </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle text-primary "></i> Tài khoản
+            <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown">
+            <!-- ng-init="dangnhap = 'http://127.0.0.1:5500/ASM/login.html'"ng-href="{{dangnhap}}" -->
+            <li><a class="dropdown-item"  href="#!login">Đăng nhập</a></li>
+            <li><a class="dropdown-item" href="#!dangxuat">Đăng kí</a></li>
+            <li><a class="dropdown-item" href="#">Quên mật khẩu </a></li>  
+            
+            <hr>
+            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+            <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+            <li><a class="dropdown-item" href="#">Cập nhật hồ sơ</a></li>
+            
+          
+          </ul>
+        </li>
+      </ul>
+
+
+    
+     
+    </div>
+    <!-- End vertical navbar -->
+    
+    
+    <!-- Page content holder -->
+    <div class="page-content p-2" id="content">
+      <!-- Toggle button -->
+        <div class="row">
+          <div class="banner  pt-3 shadow-lg rounded col-12">
+            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-2">
+              <i class="fa fa-bars mr-2"></i>
+              <small class="text-uppercase font-weight-bold">Chuyển đổi</small>
+            </button>
+          <div class="col-12 text-center">
+            <h1 class="fs-1 text-uppercase fw-bold text-dark">
+              <i class="fas fa-book"></i>  Duy Edu</h1>
+          <h5 class="text-dark font-italic">Trang thi trực tuyến hàng đầu việt nam</h5>
+          </div>
+          <div class="separator mb-2"></div>
+          </div>
+        </div>
+      <div class="row">
+        
+        <article class="col-sm-9" ng-view>
+         
+          
+        </article>
+
+        <!-- benphai -->
+        <aside class="col-sm-3">
+          <div class="card mt-1 ml-n2 mr-n2">
+            <div class="card-header">TÌM KIẾM</div>
+            <div class="card-body">
+              <form class="form-inline">
+                <input type="search" class="form-control" ng-model="test" placeholder="Search">
+              </form>
+            </div>
+          </div>
+          <div class="card mt-1 ml-n2 mr-n2 sm-3">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item ">
+                <h2 class=" card-header mb-0" id="headingOne">
+                  <button class="btn btn-link text-dark btn-block text-left text-decoration-none " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="bi bi-list-ul text-primary"></i>
+                    DANH MỤC 
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="card-body">
+                      <div class="card-body p-0" ng-controller="monhoccontroller">
+                        <!-- |filter:test" -->
+                        <ul class="list-group" ng-repeat="u in subjects">
+                         
+                          <li class="list-group-item"><a href="#!mon/{{u.Id}}/{{u.Name}}" class="text-dark text-decoration-none">{{u.Name}}</a> </li>
+                         
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ------------------ -->
+        </aside>
+    </div>
+    </div>
+    <!-- End demo content -->
+    
+  </body>
+</html>

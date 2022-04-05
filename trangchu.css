@@ -1,0 +1,122 @@
+.vertical-nav {
+    min-width: 15rem;
+    width: 15rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+  }
+  
+  .page-content {
+    width: calc(100% - 17rem);
+    margin-left: 16rem;
+    transition: all 0.4s;
+  }
+  
+  /* for toggle behavior */
+  
+  #sidebar.active {
+    margin-left: -17rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+  
+  /*
+  *
+  * ==========================================
+  * FOR DEMO PURPOSE
+  * ==========================================
+  *
+  */
+  .banner { 
+  background: #599fd9;
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);
+    width: 100%;
+    padding: -50px;
+  }
+  body {
+  
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.1em;
+  }
+  
+  .text-gray {
+    color: #aaa;
+  }
+
+  header{
+    height: 200px;
+    background-color: #3b2d46;
+    position: relative;
+}
+nav.row{
+    height: 60px;
+    background-color: #17e971;
+}
+footer{
+    height: 50px;
+    background-color: #1dbfbc;
+}
+.row article{
+    min-height: 300px;
+    background-color: white;
+}
+.row article img{
+    min-height: 163px;
+}
+.row aside{
+    min-height: 300px;
+    background-color: white;
+}
+.shopping-mall{
+    position: absolute;
+    bottom: 20px; left: 10px;
+    font-variant: small-caps;
+}
+.shopping-mall>h1{
+    font-family:Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-align: 2px 2px 2px black;
+    border-bottom:  1px dotted grey;
+    padding-bottom: 0;
+    margin: 0;
+}
+.shopping-mall>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+    color:  white;
+}

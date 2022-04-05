@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="trangchu.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+  
+
+.btn-login {
+font-size: 0.9rem;
+letter-spacing: 0.05rem;
+padding: 0.75rem 1rem;
+}
+
+.btn-google {
+color: white !important;
+background-color: #ea4335;
+}
+
+.btn-facebook {
+color: white !important;
+background-color: #3b5998;
+}
+</style>
+  <body ng-app="monhoc">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-12 mx-auto">
+          <div class="card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-bold fs-5 ">Đăng nhập</h5>
+              <form>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                  <label for="floatingInputEmail">Email </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Mật khẩu</label>
+                </div>
+  
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                  <label class="form-check-label" for="rememberPasswordCheck">
+                    Ghi nhớ 
+                  </label>
+                </div>
+                <div class="d-grid" >
+                  <button style="width: 100%;" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng nhập
+                    </button>
+                </div>
+                <hr class="my-4">
+                <div class="d-grid mb-2">
+                  <button style="width: 100%;" class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
+                      <i class="bi bi-google"></i> Đăng nhập với Google
+                  </button>
+                </div>
+                <div class="d-grid" style="width: 100%;">
+                  <button style="width: 100%;" class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
+                      <i class="bi bi-facebook"></i> Đăng nhập với FaceBook
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
