@@ -120,3 +120,11 @@ footer{
     letter-spacing: 0.5px;
     color:  white;
 }
+
+.qs:hover .qs-item{
+  background-color: rgba(170, 170, 170, 0.471);
+}
+
+.check-0:checked .qs-item{
+  border: 1px solid red;
+}

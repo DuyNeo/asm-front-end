@@ -28,20 +28,20 @@ $(function() {
     $http.get("db/Quizs/" + id + ".js").then(function(r) {
 
       $scope.subject = r.data;
- 
+      $scope.cauhoi =  $scope.subject[0]
+      $scope.CurentQs = 0;
+
 
     })
     
-
-    $scope.nextQs = function(id) { 
-      console.log(id)
-      $scope.subject.forEach(item => {
-        
-        if(item.Id == id) {
-          $scope.cauhoi = item;
-        }
-      });
+    $scope.CurentQs = 0;
+    $scope.SelectQs = function(num) { 
+      $scope.cauhoi =  $scope.subject[num]
+      console.log($scope.cauhoi);
+      $scope.CurentQs = num;
+      
     }
+
   })
 
 
