@@ -1,0 +1,58 @@
+
+<body>
+  <h1>{{Name}}</h1>
+  
+  <div  class="col-12" >
+    <h4>Câu hỏi {{CurentQs + 1}} </h4>
+    <p>{{cauhoi.Text}}</p>
+    <div>
+        <!-- <div class="form-check form-check-inline d-block neo  " width="100%" >
+            <div class="form-check form-check-inline d-block neo1  " ng-repeat="n in cauhoi.Answers " >
+              <input class="form-check-input " type="radio"  name="inlineRadioOptions" id="{n.Id}}" value="option1">{{n.Text}}
+            
+            </div>
+            
+        </div> -->
+        <div class="input-group my-2 qs" ng-repeat="n in cauhoi.Answers">
+          <div class="input-group-prepend ">
+            <div ng-class="checkQS(n.Id)" class="input-group-text qs-item" >
+            <input ng-checked="cauhoi.traloi == n.Id" name="qs"  id="check-{{$index}}"  type="radio" aria-label="Radio button for following text- input">
+            </div>
+          </div>
+          <label ng-class="checkQS(n.Id)"class="form-control  qs-item " for="check-{{$index}}" style="height: auto;">{{n.Text}}</label>
+        </div>
+      
+    </div>
+  <div class="row">
+    <div class="col-5 mt-2">
+      <button ng-click="previous()"  class="btn btn-primary text-white ">
+        <i  class="bi bi-arrow-left"></i>
+        Lùi</button>
+      <button ng-click="next()" class="btn btn-success text-white  mx-4  ">Tiếp
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+    <div class="col-7 mt-2 d-flex justify-content-end" >
+      <div class="btn btn-success col-3 mx-2">Đúng: {{ketqua.correct}}</div>
+      <div class="btn btn-danger col-3 mx-2">Sai: {{ketqua.error}}</div>
+      <div class="btn btn-primary col-3 mx-2">Điểm: {{ketqua.mark}}</div>
+
+    </div>
+  </div>
+    
+  </div>
+
+  <!-- phancauhoi -->
+  <div class="row">
+  <div class="  col-sm-12  col-8">
+   <div class="row mt-4" >
+    <!-- || {{n.Id}} -->
+      <div ng-repeat="n in subject" class="col-1 mt-2"><button id="qs-{{n.Id}}"  ng-class="checkQS2(n.isCorrect)" ng-click="SelectQs($index)" class=" shadow-sm rounded mx-2" >{{$index < 9 ? "0" + ($index + 1)  : ($index + 1)}} </button></div>
+   
+    </div>
+    <div class="text-center mt-3">
+      <a class="btn btn-danger" href="#!chon">Thoát</a>
+    </div>
+</div>
+</div>
+</body>

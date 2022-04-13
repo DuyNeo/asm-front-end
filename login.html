@@ -39,7 +39,7 @@ color: white !important;
 background-color: #3b5998;
 }
 </style>
-  <body ng-app="monhoc">
+  <body ng-app="myApp" >
   
     <div class="container">
       <div class="row">
@@ -47,25 +47,26 @@ background-color: #3b5998;
           <div class="card border-0 shadow rounded-3 my-5">
             <div class="card-body p-4 p-sm-5">
               <h5 class="card-title text-center mb-5 fw-bold fs-5 ">Đăng nhập</h5>
-              <form>
+              <form ng-controller="accountctrl">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
-                  <label for="floatingInputEmail">Email </label>
+                  <input ng-model="u" type="" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                  <label  for="floatingInputEmail">Email </label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input ng-model="p" type="password"  class="form-control" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Mật khẩu</label>
                 </div>
   
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                  <input ng-model="p" class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
                   <label class="form-check-label" for="rememberPasswordCheck">
                     Ghi nhớ 
                   </label>
                 </div>
                 <div class="d-grid" >
-                  <button style="width: 100%;" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng nhập
+                  <button style="width: 100%;"ng-click="dn()"   class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng nhập
                     </button>
+                    
                 </div>
                 <hr class="my-4">
                 <div class="d-grid mb-2">

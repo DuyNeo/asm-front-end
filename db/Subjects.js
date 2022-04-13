@@ -1,4 +1,4 @@
-var subjects = [
+[
     {
         "Id": "ADAV",
         "Name": "Lập trình Android nâng cao",
@@ -76,7 +76,7 @@ var subjects = [
     },
     {
         "Id": "MOWE",
-        "Name": "Thiết kế web cho điện thoại di động",
+        "Name": "Thiết kế web cho điện thoại ",
         "Logo": "MOWE.png"
     },
     {

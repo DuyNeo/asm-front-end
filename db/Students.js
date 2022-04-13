@@ -12,7 +12,7 @@
     {
         "username": "pheonv",
         "password": "iloveyou",
-        "fullname": "Nguyễn Văn Chí Phèo",
+        "fullname": "Nguyễn Chí Phèo",
         "email": "pheonv@fpt.edu.vn",
         "gender": "true",
         "birthday": "1985-10-11",

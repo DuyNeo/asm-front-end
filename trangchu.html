@@ -20,13 +20,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   
-  <body ng-app="monhoc">
+  <body ng-app="monhoc" ng-controller = "mainController">
     <div class="vertical-nav bg-white" id="sidebar">
       <div class="py-4 px-3 mb-4 bg-light">
         <div class="media d-flex align-items-center"><img src="https://bootstrapious.com/i/snippets/sn-v-nav/avatar.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
           <div class="media-body">
-            <h4 class="m-0">Duy Edu</h4>
-            <p class="font-weight-light text-muted mb-0">Web developer</p>
+            <h4 class="m-0">{{username == null ? "Vui lòng đăng nhập" :  username}}</h4>
+            <p class="font-weight-light text-muted mb-0">{{fullname}}</p>
           </div>
         </div>
       </div>
@@ -61,14 +61,19 @@
           </a>
           <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown">
             <!-- ng-init="dangnhap = 'http://127.0.0.1:5500/ASM/login.html'"ng-href="{{dangnhap}}" -->
-            <li><a class="dropdown-item"  href="#!login">Đăng nhập</a></li>
-            <li><a class="dropdown-item" href="#!dangxuat">Đăng kí</a></li>
-            <li><a class="dropdown-item" href="#">Quên mật khẩu </a></li>  
+            <div ng-if="!isLogin">
+              <li><a class="dropdown-item"  href="#!login">Đăng nhập</a></li>
+              <li><a class="dropdown-item" href="#!dangxuat">Đăng kí</a></li>
+            </div>
             
-            <hr>
-            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+            <div ng-if="isLogin">
+              <li><a class="dropdown-item" href="#">Quên mật khẩu </a></li>  
+            
             <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
             <li><a class="dropdown-item" href="#">Cập nhật hồ sơ</a></li>
+            <hr>
+            <li><a ng-click="logout()" class="dropdown-item text-danger" href="#!login">Đăng xuất</a></li>
+            </div>
             
           
           </ul>
@@ -128,9 +133,10 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <div class="card-body">
-                      <div class="card-body p-0" ng-controller="monhoccontroller">
+                      <div class="card-body p-0" > 
+                        <!-- ng-controller="monhoccontroller" -->
                         <!-- |filter:test" -->
-                        <ul class="list-group" ng-repeat="u in subjects">
+                        <ul class="list-group" ng-repeat="u in subjects| filter:test">
                          
                           <li class="list-group-item"><a href="#!mon/{{u.Id}}/{{u.Name}}" class="text-dark text-decoration-none">{{u.Name}}</a> </li>
                          

@@ -15,20 +15,21 @@
         </div> -->
         <div class="input-group my-2 qs" ng-repeat="n in cauhoi.Answers">
           <div class="input-group-prepend ">
-            <div class="input-group-text ">
-            <input name="qs"  id="check-{{$index}}" type="radio" aria-label="Radio button for following text input">
+            <div class="input-group-text qs-item ">
+            <input ng-checked="cauhoi.traloi == n.Id" ng-click="checkQS(cauhoi.Id, n.Id)" name="qs"  id="check-{{$index}}"  type="radio" aria-label="Radio button for following text input">
             </div>
           </div>
-          <label class="form-control qs-item" for="check-{{$index}}">{{n.Text}}</label>
+          <label class="form-control qs-item" for="check-{{$index}}" style="height: auto;">{{n.Text}}</label>
         </div>
       
     </div>
-    <button class="btn btn-primary text-white mt-3">
-      <i class="bi bi-arrow-left"></i>
+    <button ng-click="previous()"  class="btn btn-primary text-light mt-3">
+      <i  class="bi bi-arrow-left"></i>
       Lùi</button>
-    <button class="btn btn-success text-white mt-3 mx-4">Tiếp
+    <button ng-click="next()" class="btn btn-success text-white mt-3 mx-4  ">Tiếp
       <i class="bi bi-arrow-right"></i>
     </button>
+    
   </div>
 
   <!-- phancauhoi -->
@@ -36,9 +37,10 @@
   <div class="  col-sm-12  col-8">
    <div class="row mt-4" >
     <!-- || {{n.Id}} -->
-      <div ng-repeat="n in subject" class="col-1 mt-2"><button ng-click="SelectQs($index)" class="bg-success shadow rounded mx-2 text-dark" >{{$index < 9 ? "0" + ($index + 1)  : ($index + 1)}} </button></div>
+      <div ng-repeat="n in subject" class="col-1 mt-2"><button id="qs-{{n.Id}}" ng-click="SelectQs($index)" class="bg-light shadow-sm rounded mx-2 text-dark" >{{$index < 9 ? "0" + ($index + 1)  : ($index + 1)}} </button></div>
    
-  </div>
-  </div>
+    </div>
+   <div class="row justify-content-center text-dark"> <a href="#!hoanthanh" ng-click="submit()" class="btn btn-info text-light  mt-4 mx-4 " >Hoàn thành bài thi</a></div>
+</div>
 </div>
 </body>
