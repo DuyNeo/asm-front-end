@@ -23,6 +23,13 @@ myApp.config(function ($routeProvider) {
 });
 
 myApp.controller("monController", function ($scope, $routeParams, $http , $rootScope) {
+  var isLogin =  sessionStorage.getItem("isLogin") ;
+ if(isLogin != "true"){
+
+  alert("Vui long dang nhap");
+  document.location.href = "#!login";
+  return;
+ }
   var id = $routeParams.id;
   var name = $routeParams.nameMon;
 
@@ -31,24 +38,7 @@ myApp.controller("monController", function ($scope, $routeParams, $http , $rootS
     $scope.subject = r.data;
     $scope.cauhoi = $scope.subject[0];
     $scope.CurentQs = 0;
-    // code thu ne`
-    $scope.answers = {};
-    $scope.coreectCount = 0;
-    $scope.countCorrect = false;
-    // $scope.showResult=function(){
-    //   $scope.countCorrect=true;
-    //   $scope.coreectCount=0;
-    //   var qLength = $scope.subject.length;
-    //   for(var i=0;i<qLength;i++){
-    //     var answers=$scope.subject[i].answers;
-    //     $scope.subject[i].userAnswerCorrect=false;
-    //     $scope.subject[i].userAnswer=$scope.answers[i];
-    //     for(var j=0;k<answers.length;j++){
-    //       answers[j].selected="donno";
-    //       if($scope.subject[i].userAnswer===answers[j].)
-    //     }
-    //   }
-    // }
+   
   });
 
   $scope.CurentQs = 0;
@@ -142,11 +132,6 @@ myApp.controller("monhoccontroller", function ($scope , $http) {
 
     }
   }
-  // $scope.tiep = function(){
-  //   if($scope.start){
-  //     $scope.start += 1;
-  //   }
-  // }
   $scope.lui=function(){
     if($scope.start == 0 ) 
     $scope.start = $scope.page -1;
@@ -249,7 +234,7 @@ myApp.controller("hoanthanhController", function ($scope, $routeParams, $http , 
     }else if(id == AnswerId ) {
       return  "text-light   bg-success";
     }else 
-    return " text-dark bg-light  ";
+    return "text-dark bg-light  ";
   };
 
 

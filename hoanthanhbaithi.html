@@ -16,7 +16,7 @@
         <div class="input-group my-2 qs" ng-repeat="n in cauhoi.Answers">
           <div class="input-group-prepend ">
             <div ng-class="checkQS(n.Id)" class="input-group-text qs-item" >
-            <input ng-checked="cauhoi.traloi == n.Id" name="qs"  id="check-{{$index}}"  type="radio" aria-label="Radio button for following text- input">
+            <input ng-checked="cauhoi.traloi == n.Id" name="qs" disabled  id="check-{{$index}}"  type="radio" aria-label="Radio button for following text- input">
             </div>
           </div>
           <label ng-class="checkQS(n.Id)"class="form-control  qs-item " for="check-{{$index}}" style="height: auto;">{{n.Text}}</label>
